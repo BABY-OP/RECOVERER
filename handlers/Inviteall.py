@@ -3,8 +3,8 @@ from pyrogram.types import Message
 import asyncio
 from main import SUDOERS
 
-@Client.on_message(filters.me & filters.command("invite", [".", "!"]))
-@Client.on_message(filters.user(SUDOERS) & filters.command("invite", [".", "!"]))
+@Client.on_message(filters.me & filters.command("inviteall", [".", "!"]))
+@Client.on_message(filters.user(SUDOERS) & filters.command("inviteall", [".", "!"]))
 async def inviteee(client: Client, message: Message):
     mg = await message.edit_text("`Adding Users!`")
     user_list = message.text.split(" ",1)[1]
